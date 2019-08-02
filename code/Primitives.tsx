@@ -1,6 +1,6 @@
 export const primitives = {
     color: {
-        brand: "#05F",
-        tint: "#F0E5FF",
+        brand: "#F0E5FF",
+        tint: "#F3F3F3",
     },
 }

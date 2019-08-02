@@ -2,10 +2,11 @@ import * as React from "react"
 import { Frame, Stack, useCycle } from "framer"
 
 export function NavBar(props) {
-    const { leftIcons, rightIcons, initial, transition, variants } = props
+    const { leftIcons, rightIcons, initial, transition, variants, i } = props
 
     return (
         <Stack
+            custom={i}
             name="Navigation Bar"
             direction="horizontal"
             distribution="space-between"
