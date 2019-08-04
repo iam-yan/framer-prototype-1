@@ -205,30 +205,42 @@ export function App(props) {
                     color: i == viewState.invokedI ? primitives.color.brand : "black",
                 }),
             },
-            detailContainer: {
+            delay: {
                 initial: {
                     y: 56,
                     opacity: 0,
                     transition: transition,
                 },
-                envoked: {
+                envoked: i => ({
                     y: 0,
                     opacity: 1,
-                    transition: primitives.transitions.delyed,
-                },
+                    transition: primitives.transitions.delay(i),
+                }),
             },
-            button: {
-                initial: {
-                    y: 56,
-                    opacity: 0,
-                    transition: transition,
-                },
-                envoked: {
-                    y: 0,
-                    opacity: 1,
-                    transition: primitives.transitions.delyedMore,
-                },
-            }
+            // detailContainer: {
+            //     initial: {
+            //         y: 56,
+            //         opacity: 0,
+            //         transition: transition,
+            //     },
+            //     envoked: {
+            //         y: 0,
+            //         opacity: 1,
+            //         transition: primitives.transitions.delyed,
+            //     },
+            // },
+            // button: {
+            //     initial: {
+            //         y: 56,
+            //         opacity: 0,
+            //         transition: transition,
+            //     },
+            //     envoked: {
+            //         y: 0,
+            //         opacity: 1,
+            //         transition: primitives.transitions.delyedMore,
+            //     },
+            // }
         },
     }
 

@@ -16,27 +16,39 @@ export const primitives = {
             duration: 0.32,
             ease: "easeOut"
         },
-        delyed: {
+        flash: {
+            type: "tween",
+            duration: 0,
+            ease: "easeOut",
+        },
+        slow: {
+            type: "tween",
+            duration: 2,
+            ease: "easeOut",
+        },
+        delay: (i) => ({
+            type: "tween",
+            duration: 0.32,
+            ease: "easeOut",
+            delay: 0.48 + i * 0.16,
+        }),
+        delyedBit: {
             type: "tween",
             duration: 0.32,
             ease: "easeOut",
             delay: 0.48,
         },
-        delyedMore: {
+        delyed: {
             type: "tween",
             duration: 0.32,
             ease: "easeOut",
             delay: 0.64,
         },
-        flash:{
+        delyedMore: {
             type: "tween",
-            duration: 0,
+            duration: 0.32,
             ease: "easeOut",
+            delay: 0.8,
         },
-        slow:{
-            type: "tween",
-            duration: 2,
-            ease: "easeOut",
-        }
     }
 }

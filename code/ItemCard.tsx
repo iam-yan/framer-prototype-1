@@ -19,20 +19,29 @@ export function ItemCard(props) {
         changeItemSumCount(change)
         setItemCount(itemCount + change)
     }
+
+    const heart =
+        <Frame
+            custom={0}
+            top={8}
+            size={24}
+            background="null"
+            variants={variants.delay}
+        >
+            <Heart />
+        </Frame>
+
     const detailSpec = (
         <Stack
             name="Detail Container"
-            custom={i}
-            variants={variants.detailContainer}
+            custom={1}
+            variants={variants.delay}
             distribution="start"
             alignment="start"
             width={176}
-            top={8}
+            top={64}
             gap={0}
         >
-            <Frame background="null" size={24}>
-                <Heart />
-            </Frame>
             <Frame
                 name="Headline"
                 height="auto"
@@ -43,7 +52,7 @@ export function ItemCard(props) {
                     fontWeight: 600,
                     lineHeight: "32px",
                     textTransform: "capitalize",
-                    marginTop: "64px",
+                    // marginTop: "64px",
                 }}
             >
                 <span>{headline}</span>
@@ -80,7 +89,8 @@ export function ItemCard(props) {
     const button = (
         <Frame
             name="Button Container"
-            variants={variants.button}
+            custom={2}
+            variants={variants.delay}
             background="null"
             height={48}
             width="100%"
@@ -200,6 +210,7 @@ export function ItemCard(props) {
                 >
                     <span>{price}</span>
                 </Frame>
+                {justTapped ? heart : null}
                 {justTapped ? detailSpec : null}
             </Stack>
             {justTapped ? button : null}
