@@ -2,6 +2,7 @@ import * as React from "react"
 import { Scroll, Frame, useAnimation, useCycle } from "framer"
 import { NavBar } from "./NavBar"
 import { ItemCard, itemConfigs } from "./ItemCard"
+import { Bag } from "./Bag"
 import { ChevronLeft, Menu, Heart, ShoppingBag } from "react-feather"
 import { primitives } from "./Primitives"
 
@@ -43,6 +44,8 @@ const iniState = toState(defaultHs, -1, false)
 
 export function App(props) {
     const [viewState, setViewState] = React.useState(iniState)
+    const [sumCount, setSumCount] = React.useState(0)
+    // const itemSumCount = React.useRef(0)
     const [current, cycle] = useCycle("initial", "envoked")
     const [current_out, cycle_out] = useCycle("initial_out", "envoked_out")
     React.useEffect(() => {
@@ -55,7 +58,12 @@ export function App(props) {
                 transition: transition,
             })
         }
-    },[viewState.isEnvoked])
+    }, [viewState.isEnvoked])
+    // const changeItemSumCount = (change) => {
+    //     let currentSum = itemSumCount.current
+    //     currentSum += change
+    //     itemSumCount.current = currentSum
+    // }
     const scrollControls = useAnimation()
     const { height, width } = props
     console.log("render")
@@ -237,9 +245,10 @@ export function App(props) {
                 }
                 else e.preventDefault()
             }}
+            changeItemSumCount={(change) => setSumCount(sumCount + change)}
+            currentSumCount={sumCount}
             justTapped={i == viewState.invokedI}
             closeFunc={() => {
-                console.log("close")
                 setViewState(newStateForClose())
             }}
         />
@@ -255,7 +264,7 @@ export function App(props) {
         >
             <NavBar
                 leftIcons={[<ChevronLeft />, <Menu />]}
-                rightIcons={[<Heart />, <ShoppingBag />]}
+                rightIcons={[<Heart />, <Bag itemCount={sumCount} />]}
                 initial="initial_out"
                 transition={transition}
                 variants={variants.navBar}

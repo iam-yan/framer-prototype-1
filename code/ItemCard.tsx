@@ -4,14 +4,21 @@ import { url } from "framer/resource"
 import { primitives } from "./Primitives"
 import { NavBar } from "./NavBar"
 import { X, Heart } from "react-feather"
-import { Button } from "./Button";
+import { Button } from "./Button"
+import { Bag } from "./Bag"
 
 let transition = primitives.transitions.default
 
 export function ItemCard(props) {
-    let { item, i, variants, initial, onTap, justTapped, closeFunc } = props
+    let { item, i, variants, initial, onTap, justTapped, closeFunc, changeItemSumCount, currentSumCount } = props
     const { name, height, price, img, headline, detail, itemNo } = item
-
+    const [itemCount, setItemCount] = React.useState(0)
+    // const sumCount = React.useRef(currentSumCount)
+    // console.log(currentSumCount + ":" + sumCount.current)
+    const changeItemCount = (change) => {
+        changeItemSumCount(change)
+        setItemCount(itemCount + change)
+    }
     const detailSpec = (
         <Stack
             name="Detail Container"
@@ -28,9 +35,6 @@ export function ItemCard(props) {
             </Frame>
             <Frame
                 name="Headline"
-                // custom={i}
-                // variants={variants.headline}
-                // transition={transition}
                 height="auto"
                 width="100%"
                 background="null"
@@ -46,9 +50,6 @@ export function ItemCard(props) {
             </Frame>
             <Frame
                 name="Detail"
-                // custom={i}
-                // variants={variants.detail}
-                // transition={transition}
                 height="auto"
                 width="100%"
                 // top={16}
@@ -63,9 +64,6 @@ export function ItemCard(props) {
             </Frame>
             <Frame
                 name="Item No."
-                // custom={i}
-                // variants={variants.itemNo}
-                // transition={transition}
                 height="auto"
                 width="100%"
                 background="null"
@@ -88,10 +86,9 @@ export function ItemCard(props) {
             width="100%"
             top={792}
         >
-            <Button />
+            <Button itemCount={itemCount} changeItemCount={changeItemCount} />
         </Frame>
     )
-
     const closeButton =
         <Frame
             background="null"
@@ -104,6 +101,16 @@ export function ItemCard(props) {
             <X />
         </Frame>
 
+    const navBar =
+        <NavBar
+            i={i}
+            leftIcons={[closeButton]}
+            rightIcons={[<Bag itemCount={currentSumCount} />]}
+            initial={initial}
+            transition={transition}
+            variants={variants.navBar}
+        />
+
     const imgShadow =
         <Frame
             name="Img Shadow"
@@ -113,7 +120,7 @@ export function ItemCard(props) {
             width="100%"
             right={0}
             background={{ src: img }}
-            style = {{
+            style={{
                 filter: "drop-shadow(0px 32px 32px rgba(0, 0, 0, 0.48))",
             }}
         />
@@ -121,8 +128,6 @@ export function ItemCard(props) {
     return (
         <Frame
             name="Container"
-            // height={height}
-            // width="100%"
             overflow="hidden"
             custom={i}
             variants={variants.container}
@@ -130,16 +135,7 @@ export function ItemCard(props) {
             transition={transition}
             onClick={onTap}
             background="null"
-        // style={{ borderRadius: 0 }}
         >
-            <NavBar
-                i={i}
-                leftIcons={[closeButton]}
-                rightIcons={[]}
-                initial={initial}
-                transition={transition}
-                variants={variants.navBar}
-            />
             <Frame
                 name="Deco Rect"
                 custom={i}
@@ -152,9 +148,8 @@ export function ItemCard(props) {
                 right={0}
                 x="50%"
                 y="50%"
-            // rotate={4}
-            // height={120 * 2}
             />
+            {justTapped ? navBar : null}
             <Frame
                 name="Product Img"
                 custom={i}

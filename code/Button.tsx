@@ -3,9 +3,9 @@ import { Frame, useAnimation } from "framer"
 import { primitives } from "./Primitives"
 import { Plus, Minus } from "react-feather"
 
-export function Button() {
+export function Button(props) {
+    const { itemCount, changeItemCount } = props
     const aniControls = useAnimation()
-    const [itemCount, setItemCount] = React.useState(0)
     const variants = {
         primary: {
             default: {
@@ -107,7 +107,7 @@ export function Button() {
                     aniControls.start("pressingMinus")
                 }}
                 onTap={() => {
-                    setItemCount(itemCount - 1)
+                    changeItemCount(-1)
                 }}
             >
                 <Frame name="Icon Frame" background="null" size={24} center>
@@ -126,7 +126,7 @@ export function Button() {
                     aniControls.start("pressing")
                 }}
                 onTap={() => {
-                    setItemCount(itemCount + 1)
+                    changeItemCount(1)
                 }}
             >
                 <Frame
