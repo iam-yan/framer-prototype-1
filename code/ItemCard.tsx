@@ -105,7 +105,7 @@ export function ItemCard(props) {
         <NavBar
             i={i}
             leftIcons={[closeButton]}
-            rightIcons={[<Bag itemCount={currentSumCount} hidable={true}/>]}
+            rightIcons={[<Bag itemCount={currentSumCount} hidable={true} />]}
             initial={initial}
             transition={transition}
             variants={variants.navBar}
@@ -223,7 +223,7 @@ const item = (name, heightOffset, price, itemNo, headline, detail) => {
     }
 }
 
-export const itemConfigs = [
+const configs = [
     item(
         "MISTER PRISME PRIMER",
         0,
@@ -237,7 +237,7 @@ export const itemConfigs = [
         -48,
         230,
         "P090495",
-        "MATIFYING STICK THAT UNIFIES COMPLEXION WITHOUT CAKING EFFECT",
+        "MATIFYING STICK",
         "A mattifying stick with a second-skin effect in a sheer shade that durably smooths the skin and reduces imperfections without a caking effect."
     ),
     item(
@@ -257,19 +257,19 @@ export const itemConfigs = [
         "A mattifying stick with a second-skin effect in a sheer shade that durably smooths the skin and reduces imperfections without a caking effect."
     ),
     item(
-        "GENTLEMAN GIVENCHY",
+        "ANGE OU DÉMON",
         32,
         230,
-        "P007085",
-        "EAU DE TOILETTE",
-        "Gentleman Givenchy Eau de Parfum, a new intensity for men who dance to their own beat. An elegant woody-floral Oriental reminiscent of nightfall, composed with an explosive signature. A floral played out in masculine notes."
+        "P037325",
+        "EAU DE PARFUM",
+        "A woman with a mystery whose aura intoxicates you. Enigmatic, fascinating, charming, elusive. An angel - or not at all? Only she truly knows. Optional Seduction is always a mystery."
     ),
     item(
         "MATISSIME VELVET FLUID",
         0,
         230,
         "P081931",
-        "RADIANT MAT FLUID FOUNDATION SPF 20 - PA+++",
+        "RADIANT MAT FLUID FOUNDATION",
         "Givenchy turns the light on for matte, in a radiant-matte fluid foundation. Just like velvet, it absorbs and reflects light and is comfortable and soft. Long-lasting coverage for normal to combination skins."
     ),
     item(
@@ -288,68 +288,15 @@ export const itemConfigs = [
         "2-IN-1 HIGHLIGHTER",
         "With its two-in-one applicator, this liquid highlighter is applied in touches of light or all over the face for a dewy iridescent finish."
     ),
+
     item(
-        "MISTER PRISME PRIMER",
-        0,
-        127,
-        "P090516",
-        "MATTIFYING PRIMER",
-        "A soft skin primer that can be used alone or under makeup for a velvety smooth matte complexion."
-    ),
-    item(
-        "L'INTERDIT ÉDITION COUTURE",
-        -48,
-        230,
-        "P090495",
-        "MATIFYING STICK THAT UNIFIES COMPLEXION WITHOUT CAKING EFFECT",
-        "A mattifying stick with a second-skin effect in a sheer shade that durably smooths the skin and reduces imperfections without a caking effect."
-    ),
-    item(
-        "VOLUME DISTURBIA",
-        0,
-        250,
-        "P072590",
-        "VOLUME & CURVE MASCARA 24 HOURS WEAR",
-        "Volume Disturbia Excessive Volume & Curve mascara – 24-hours wear #MADETODISTURB"
-    ),
-    item(
-        "MISTER MATIFYING STICK",
-        0,
-        250,
-        "P090495",
-        "MATIFYING STICK THAT UNIFIES COMPLEXION WITHOUT CAKING EFFECT",
-        "A mattifying stick with a second-skin effect in a sheer shade that durably smooths the skin and reduces imperfections without a caking effect."
-    ),
-    item(
-        "GENTLEMAN GIVENCHY",
-        32,
-        230,
-        "P007085",
-        "EAU DE TOILETTE",
-        "Gentleman Givenchy Eau de Parfum, a new intensity for men who dance to their own beat. An elegant woody-floral Oriental reminiscent of nightfall, composed with an explosive signature. A floral played out in masculine notes."
-    ),
-    item(
-        "MATISSIME VELVET FLUID",
+        "L'INTERDIT",
         0,
         230,
-        "P081931",
-        "RADIANT MAT FLUID FOUNDATION SPF 20 - PA+++",
-        "Givenchy turns the light on for matte, in a radiant-matte fluid foundation. Just like velvet, it absorbs and reflects light and is comfortable and soft. Long-lasting coverage for normal to combination skins."
-    ),
-    item(
-        "TEINT COUTURE",
-        0,
-        230,
-        "P090041",
-        "EMBELLISHING CONCEALER",
-        "A dual-toned practical concealer that hides imperfections and wakes up the eye area with light."
-    ),
-    item(
-        "TEINT COUTURE RADIANT DROP",
-        0,
-        230,
-        "P080463",
-        "2-IN-1 HIGHLIGHTER",
-        "With its two-in-one applicator, this liquid highlighter is applied in touches of light or all over the face for a dewy iridescent finish."
+        "P069003",
+        "SHOWER OIL",
+        "L’Interdit Bath & Shower Oil leaves skin silky-soft hydrated and delicately scented with Givenchy’s new fragrance."
     ),
 ]
+
+export const itemConfigs = [...configs, ...configs]
