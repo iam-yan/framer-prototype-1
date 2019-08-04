@@ -17,10 +17,21 @@ export function PlayItem(props) {
         height={300}
         width={500}
         onTap={() => {
-            setState(state + 1)
-            setAnotherState(!anotherState)
+            if (state == 0) {
+                setState(state + 1)
+                console.log("envoke")
+            }
         }}
-    />
+    >
+        <Frame
+            height={100}
+            width={100}
+            onTap={() => {
+                setState(0)
+                console.log("close")
+            }}
+        />
+    </Frame>
 }
 
 // export function PlayContainer(props) {

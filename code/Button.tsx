@@ -12,7 +12,7 @@ export function Button() {
                 backgroundColor: primitives.color.dark,
                 shadow: "0px 8px 16px rgba(0, 0, 0, 0.25)",
                 width: 208,
-                transition: primitives.transitions.default,
+                transition: primitives.transitions.fast,
             },
             pressing: {
                 backgroundColor: primitives.color.brand,
@@ -23,7 +23,7 @@ export function Button() {
                 backgroundColor: primitives.color.dark,
                 shadow: "0px 8px 16px rgba(0, 0, 0, 0.25)",
                 width: 144,
-                transition: primitives.transitions.default,
+                transition: primitives.transitions.fast,
             }
         },
         primaryIcon: {
@@ -47,9 +47,11 @@ export function Button() {
                 left: 24,
                 top: 24,
                 size: 0,
+                transition: primitives.transitions.fast,
             },
             pressingMinus: {
                 shadow: "0px 0px 0px rgba(0, 0, 0, 0.25)",
+                transition: primitives.transitions.flash,
             },
             config: {
                 opacity: 1,
@@ -57,6 +59,7 @@ export function Button() {
                 left: 0,
                 top: 0,
                 size: 48,
+                transition: primitives.transitions.fast,
             }
         },
         textPre: {
@@ -98,7 +101,7 @@ export function Button() {
                 animate={aniControls}
                 initial={itemCount == 0 ? "default" : "pressing"}
                 variants={variants.secondary}
-                transition={primitives.transitions.default}
+                transition={primitives.transitions.fast}
                 overflow="hidden"
                 onTapStart={() => {
                     aniControls.start("pressingMinus")
@@ -132,7 +135,7 @@ export function Button() {
                     animate={aniControls}
                     initial={itemCount == 0 ? "default" : "config"}
                     variants={variants.primaryIcon}
-                    transition={primitives.transitions.default}
+                    transition={primitives.transitions.fast}
                     overflow="hidden"
                 >
                     <Frame name="Icon Frame" background="null" size={24} center>
@@ -145,7 +148,7 @@ export function Button() {
                 background="null"
                 // animate={aniControls}
                 // initial="default"
-                // transition={primitives.transitions.default}
+                // transition={primitives.transitions.fast}
                 // variants={variants.textPre}
                 // overflow="hidden"
                 color="white"

@@ -9,7 +9,7 @@ import { Button } from "./Button";
 let transition = primitives.transitions.default
 
 export function ItemCard(props) {
-    let { item, i, variants, initial, onTap, justTapped } = props
+    let { item, i, variants, initial, onTap, justTapped, closeFunc } = props
     const { name, height, price, img, headline, detail, itemNo } = item
 
     const detailSpec = (
@@ -92,6 +92,32 @@ export function ItemCard(props) {
         </Frame>
     )
 
+    const closeButton =
+        <Frame
+            background="null"
+            size={24}
+            onClick={(event) => {
+                event.stopPropagation();
+                closeFunc()
+            }}
+        >
+            <X />
+        </Frame>
+
+    const imgShadow =
+        <Frame
+            name="Img Shadow"
+            variants={variants.imgShadow}
+            transition={transition}
+            height="100%"
+            width="100%"
+            right={0}
+            background={{ src: img }}
+            style = {{
+                filter: "drop-shadow(0px 32px 32px rgba(0, 0, 0, 0.48))",
+            }}
+        />
+
     return (
         <Frame
             name="Container"
@@ -102,13 +128,13 @@ export function ItemCard(props) {
             variants={variants.container}
             initial={initial}
             transition={transition}
-            onTap={onTap}
+            onClick={onTap}
             background="null"
         // style={{ borderRadius: 0 }}
         >
             <NavBar
                 i={i}
-                leftIcons={[<X />]}
+                leftIcons={[closeButton]}
                 rightIcons={[]}
                 initial={initial}
                 transition={transition}
@@ -136,7 +162,9 @@ export function ItemCard(props) {
                 transition={transition}
                 right={0}
                 background={{ src: img }}
-            />
+            >
+                {justTapped ? imgShadow : null}
+            </Frame>
             <Stack
                 name="Spec Container"
                 custom={i}

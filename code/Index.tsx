@@ -32,49 +32,41 @@ const scaleHs = (iniHs, iniW, scaledW, envokedI, envokedH) => {
     newHs[envokedI] = envokedH
     return newHs
 }
-const toState = (hs, invokedI) => ({
+const toState = (hs, invokedI, isEnvoking) => ({
     invokedI: invokedI,
     configs: toConfigs(hs),
+    isEnvoked: isEnvoking,
 })
 
-// const testHs = [
-//     50,
-//     350,
-//     72,
-//     230,
-//     180,
-//     100,
-//     210,
-//     250,
-//     90,
-//     82,
-//     120,
-//     50,
-//     50,
-//     350,
-//     72,
-//     230,
-//     180,
-//     100,
-//     210,
-//     250,
-//     90,
-//     82,
-//     120,
-//     50,
-// ]
 const defaultHs = itemConfigs.map(config => config.height)
-const iniState = toState(defaultHs, -1)
+const iniState = toState(defaultHs, -1, false)
 
 export function App(props) {
     const [viewState, setViewState] = React.useState(iniState)
     const [current, cycle] = useCycle("initial", "envoked")
     const [current_out, cycle_out] = useCycle("initial_out", "envoked_out")
+    React.useEffect(() => {
+        if (viewState.invokedI >= 0) {
+            console.log("use effect")
+            cycle()
+            cycle_out()
+            scrollControls.start({
+                y: -1 * (viewState.isEnvoked ? viewState.configs[viewState.invokedI].y : iniState.configs[viewState.invokedI].y),
+                transition: transition,
+            })
+        }
+    },[viewState.isEnvoked])
     const scrollControls = useAnimation()
     const { height, width } = props
+    console.log("render")
     const subWidth = (width - gap * 3) / 2
-    const newState = envokedI =>
-        toState(scaleHs(defaultHs, subWidth, width, envokedI, height), envokedI)
+    const newStateForEnvoke = envokedI =>
+        toState(scaleHs(defaultHs, subWidth, width, envokedI, height), envokedI, true)
+    const newStateForClose = () => ({
+        invokedI: viewState.invokedI,
+        configs: viewState.configs,
+        isEnvoked: false,
+    })
     const variants = {
         navBar: {
             initial_out: {
@@ -155,6 +147,14 @@ export function App(props) {
                     bottom: i == viewState.invokedI ? 216 : 80,
                 }),
             },
+            imgShadow: {
+                initial: {
+                    opacity: 0,
+                },
+                envoked: {
+                    opacity: 1,
+                },
+            },
             specContainer: {
                 initial: i => ({
                     height: 56,
@@ -231,20 +231,19 @@ export function App(props) {
             i={i}
             variants={variants.item}
             initial="initial"
-            onTap={() => {
-                setViewState(newState(i))
-                cycle()
-                cycle_out()
+            onTap={(e) => {
+                if (!viewState.isEnvoked) {
+                    setViewState(newStateForEnvoke(i))
+                }
+                else e.preventDefault()
             }}
             justTapped={i == viewState.invokedI}
+            closeFunc={() => {
+                console.log("close")
+                setViewState(newStateForClose())
+            }}
         />
     ))
-    if (viewState.invokedI >= 0) {
-        scrollControls.start({
-            y: -1 * viewState.configs[viewState.invokedI].y,
-            transition: transition,
-        })
-    }
 
     return (
         <Frame
@@ -268,8 +267,8 @@ export function App(props) {
                 transition={transition}
                 variants={variants.scroll}
                 scrollAnimate={scrollControls}
-                dragEnabled={viewState.invokedI < 0}
-                wheelEnabled={viewState.invokedI < 0}
+                dragEnabled={!viewState.isEnvoked}
+                wheelEnabled={!viewState.isEnvoked}
             >
                 <Frame
                     name="container"

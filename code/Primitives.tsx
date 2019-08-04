@@ -11,6 +11,11 @@ export const primitives = {
             duration: 0.48,
             ease: "easeOut"
         },
+        fast: {
+            type: "tween",
+            duration: 0.32,
+            ease: "easeOut"
+        },
         delyed: {
             type: "tween",
             duration: 0.32,
