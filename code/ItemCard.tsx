@@ -105,7 +105,7 @@ export function ItemCard(props) {
         <NavBar
             i={i}
             leftIcons={[closeButton]}
-            rightIcons={[<Bag itemCount={currentSumCount} />]}
+            rightIcons={[<Bag itemCount={currentSumCount} hidable={true}/>]}
             initial={initial}
             transition={transition}
             variants={variants.navBar}

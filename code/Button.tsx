@@ -64,14 +64,10 @@ export function Button(props) {
         },
         textPre: {
             default: {
-                // height: 48,
-                // width: 108,
                 y: 0,
                 opacity: 1,
             },
             config: {
-                // height: 0,
-                // width: 0,
                 y: 48,
                 opacity: 0,
             },
@@ -101,7 +97,6 @@ export function Button(props) {
                 animate={aniControls}
                 initial={itemCount == 0 ? "default" : "pressing"}
                 variants={variants.secondary}
-                transition={primitives.transitions.fast}
                 overflow="hidden"
                 onTapStart={() => {
                     aniControls.start("pressingMinus")

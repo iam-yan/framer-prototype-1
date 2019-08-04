@@ -4,7 +4,20 @@ import { primitives } from "./Primitives"
 import { ShoppingBag } from "react-feather"
 
 export function Bag(props) {
-    const { itemCount } = props
+    const { itemCount, hidable = false } = props
+    const aniControls = useAnimation()
+    const variants = {
+        container: {
+            hide: {
+                size: 0
+            },
+            reveal: {
+                size: 64
+            },
+        },
+    }
+    let initial = hidable && itemCount == 0 ? "hide" : "reveal"
+    aniControls.start(initial)
     return (
         <Frame
             name="Bag"
@@ -13,10 +26,13 @@ export function Bag(props) {
         >
             <Frame
                 name="Container"
-                size={64}
                 center
                 overflow="hidden"
                 borderRadius={100}
+                animate={aniControls}
+                initial={initial}
+                variants={variants.container}
+                transition={primitives.transitions.fast}
                 background="null"
             >
                 <Frame
@@ -28,23 +44,26 @@ export function Bag(props) {
                 >
                     <ShoppingBag />
                 </Frame>
-                <Frame
-                    name="Count BG"
-                    size={20}
-                    borderRadius={100}
-                    backgroundColor={primitives.color.brand}
-                    color="white"
-                    style={{
-                        fontSize: "12px",
-                        fontWeight: 700,
-                        lineHeight: 20,
-                    }}
-                    center
-                    x={10}
-                    y={-10}
-                >
-                    {itemCount}
-                </Frame>
+                {itemCount == 0 && !hidable ?
+                    null :
+                    <Frame
+                        name="Count BG"
+                        size={20}
+                        borderRadius={100}
+                        backgroundColor={primitives.color.brand}
+                        color="white"
+                        style={{
+                            fontSize: "12px",
+                            fontWeight: 700,
+                            lineHeight: 20,
+                        }}
+                        center
+                        x={10}
+                        y={-10}
+                    >
+                        {itemCount}
+                    </Frame>
+                }
             </Frame>
         </Frame>
     )
