@@ -1,15 +1,96 @@
 import * as React from "react"
-import {Frame } from "framer"
+import { Frame, Stack } from "framer"
 import { url } from "framer/resource"
 import { primitives } from "./Primitives"
 import { NavBar } from "./NavBar"
-import { X } from "react-feather"
+import { X, Heart } from "react-feather"
+import { Button } from "./Button";
 
-//i, variants, initial, transition,
+let transition = primitives.transitions.default
 
 export function ItemCard(props) {
-    let { item, i, variants, initial, transition, onTap } = props
-    const { name, height, price, img } = item
+    let { item, i, variants, initial, onTap, justTapped } = props
+    const { name, height, price, img, headline, detail, itemNo } = item
+
+    const detailSpec = (
+        <Stack
+            name="Detail Container"
+            custom={i}
+            variants={variants.detailContainer}
+            distribution="start"
+            alignment="start"
+            width={176}
+            top={8}
+            gap={0}
+        >
+            <Frame background="null" size={24}>
+                <Heart />
+            </Frame>
+            <Frame
+                name="Headline"
+                // custom={i}
+                // variants={variants.headline}
+                // transition={transition}
+                height="auto"
+                width="100%"
+                background="null"
+                style={{
+                    fontSize: 20,
+                    fontWeight: 600,
+                    lineHeight: "32px",
+                    textTransform: "capitalize",
+                    marginTop: "64px",
+                }}
+            >
+                <span>{headline}</span>
+            </Frame>
+            <Frame
+                name="Detail"
+                // custom={i}
+                // variants={variants.detail}
+                // transition={transition}
+                height="auto"
+                width="100%"
+                // top={16}
+                background="null"
+                style={{
+                    fontSize: 15,
+                    lineHeight: "24px",
+                    margin: "16px 0",
+                }}
+            >
+                <span>{detail}</span>
+            </Frame>
+            <Frame
+                name="Item No."
+                // custom={i}
+                // variants={variants.itemNo}
+                // transition={transition}
+                height="auto"
+                width="100%"
+                background="null"
+                style={{
+                    fontSize: 12,
+                    lineHeight: "24px",
+                }}
+            >
+                <span>{itemNo}</span>
+            </Frame>
+        </Stack>
+    )
+
+    const button = (
+        <Frame
+            name="Button Container"
+            variants={variants.button}
+            background="null"
+            height={48}
+            width="100%"
+            bottom={56}
+        >
+            <Button />
+        </Frame>
+    )
 
     return (
         <Frame
@@ -23,7 +104,7 @@ export function ItemCard(props) {
             transition={transition}
             onTap={onTap}
             background="null"
-            style={{ paddingLeft: 16, borderRadius: 0 }}
+        // style={{ borderRadius: 0 }}
         >
             <NavBar
                 i={i}
@@ -45,8 +126,8 @@ export function ItemCard(props) {
                 right={0}
                 x="50%"
                 y="50%"
-                // rotate={4}
-                // height={120 * 2}
+            // rotate={4}
+            // height={120 * 2}
             />
             <Frame
                 name="Product Img"
@@ -56,23 +137,30 @@ export function ItemCard(props) {
                 right={0}
                 background={{ src: img }}
             />
-            <Frame
+            <Stack
                 name="Spec Container"
-                height={56}
-                width={120}
+                custom={i}
+                variants={variants.specContainer}
+                transition={transition}
+                alignment="start"
+                distribution="start"
+                // height={56}
+                // width={120}
                 bottom={16}
-                background="null"
+                gap={0}
             >
                 <Frame
                     name="Name"
-                    top={0}
+                    custom={i}
+                    variants={variants.itemName}
+                    transition={transition}
                     height="auto"
                     width="100%"
                     background="null"
                     style={{
-                        fontSize: 12,
-                        fontWeight: 600,
-                        lineHeight: "16px",
+                        // fontSize: 12,
+                        // fontWeight: 600,
+                        // lineHeight: "16px",
                         textTransform: "uppercase",
                     }}
                 >
@@ -80,19 +168,18 @@ export function ItemCard(props) {
                 </Frame>
                 <Frame
                     name="Price"
-                    top={32}
+                    custom={i}
+                    variants={variants.price}
+                    transition={transition}
                     height="auto"
                     width="100%"
                     background="null"
-                    style={{
-                        fontSize: 12,
-                        fontWeight: 300,
-                        lineHeight: "24px",
-                    }}
                 >
                     <span>{price}</span>
                 </Frame>
-            </Frame>
+                {justTapped ? detailSpec : null}
+            </Stack>
+            {justTapped ? button : null}
         </Frame>
     )
 }
