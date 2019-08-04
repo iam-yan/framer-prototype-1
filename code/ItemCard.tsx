@@ -86,7 +86,7 @@ export function ItemCard(props) {
             background="null"
             height={48}
             width="100%"
-            bottom={56}
+            top={792}
         >
             <Button />
         </Frame>

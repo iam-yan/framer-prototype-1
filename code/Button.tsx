@@ -80,7 +80,7 @@ export function Button() {
             name="Button"
             background="null"
             center
-            height={48}
+            height="100%"
             width={208}
             style={{
                 fontFamily: "Open Sans"
