@@ -225,7 +225,7 @@ export function TestCard() {
 const item = (name, heightOffset, price, itemNo, headline, detail) => {
     return {
         name: name,
-        height: 248 + heightOffset,
+        height: 264 + heightOffset,
         price: `$${price}.00`,
         img: url(`code/images/${name.toUpperCase()}.png`),
         itemNo: `Item No. ${itemNo}`,
@@ -245,7 +245,7 @@ const configs = [
     ),
     item(
         "L'INTERDIT ÉDITION COUTURE",
-        -48,
+        -72,
         230,
         "P090495",
         "MATIFYING STICK",
@@ -253,7 +253,7 @@ const configs = [
     ),
     item(
         "VOLUME DISTURBIA",
-        0,
+        -8,
         250,
         "P072590",
         "VOLUME & CURVE MASCARA 24 HOURS WEAR",
@@ -261,15 +261,15 @@ const configs = [
     ),
     item(
         "MISTER MATIFYING STICK",
-        0,
+        -16,
         250,
         "P090495",
         "MATIFYING STICK THAT UNIFIES COMPLEXION WITHOUT CAKING EFFECT",
         "A mattifying stick with a second-skin effect in a sheer shade that durably smooths the skin and reduces imperfections without a caking effect."
     ),
     item(
-        "ANGE OU DÉMON",
-        32,
+        "MISTER ANGE OU DÉMON",
+        24,
         230,
         "P037325",
         "EAU DE PARFUM",
@@ -284,7 +284,7 @@ const configs = [
         "Givenchy turns the light on for matte, in a radiant-matte fluid foundation. Just like velvet, it absorbs and reflects light and is comfortable and soft. Long-lasting coverage for normal to combination skins."
     ),
     item(
-        "TEINT COUTURE",
+        "TEINT COUTURE PRIMER",
         0,
         230,
         "P090041",
@@ -293,7 +293,7 @@ const configs = [
     ),
     item(
         "TEINT COUTURE RADIANT DROP",
-        0,
+        -24,
         230,
         "P080463",
         "2-IN-1 HIGHLIGHTER",
@@ -301,8 +301,8 @@ const configs = [
     ),
 
     item(
-        "L'INTERDIT",
-        0,
+        "L'INTERDIT ÉDITION WHITE",
+        -32,
         230,
         "P069003",
         "SHOWER OIL",
