@@ -809,7 +809,7 @@ exports.__info__ = [{ "name": "NavBar", "children": false, "type": "component" }
 
 "use strict";
 
-//# framerSourceMap=eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGxheUdyb3VuZC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL2NvZGUvUGxheUdyb3VuZC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQkFBOEI7QUFDOUIsaUNBQTJDO0FBQzNDLG1DQUEwRTtBQUUxRSx5QkFBeUI7QUFDekIsNENBQTRDO0FBRTVDLFNBQWdCLFFBQVEsQ0FBQyxLQUFLOztJQUMxQiw0Q0FBNEM7SUFDNUMsTUFBTSxDQUFDLEtBQUssRUFBRSxRQUFRLENBQUMsR0FBRyxnQkFBUSxDQUFDLENBQUMsQ0FBQyxDQUFBO0lBQ3JDLE1BQU0sQ0FBQyxZQUFZLEVBQUUsZUFBZSxDQUFDLEdBQUcsZ0JBQVEsQ0FBQyxJQUFJLENBQUMsQ0FBQTtJQUN0RCxNQUFNLEVBQUUsTUFBTSxFQUFFLEtBQUssRUFBRSxHQUFHLEtBQUssQ0FBQTtJQUUvQixPQUFPLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxDQUFBO0lBRWpCLE9BQU8sb0JBQUMsY0FBSyxJQUNULE1BQU0sRUFBRSxHQUFHLEVBQ1gsS0FBSyxFQUFFLEdBQUcsRUFDVixLQUFLLEVBQUUsR0FBRyxFQUFFOztZQUNSLElBQUksS0FBSyxJQUFJLENBQUMsRUFBRTtnQkFDWixRQUFRLENBQUMsS0FBSyxHQUFHLENBQUMsQ0FBQyxDQUFBO2dCQUNuQixPQUFPLENBQUMsR0FBRyxDQUFDLFFBQVEsQ0FBQyxDQUFBO2FBQ3hCO1NBQ0o7UUFFRCxvQkFBQyxjQUFLLElBQ0YsTUFBTSxFQUFFLEdBQUcsRUFDWCxLQUFLLEVBQUUsR0FBRyxFQUNWLEtBQUssRUFBRSxHQUFHLEVBQUU7O2dCQUNSLFFBQVEsQ0FBQyxDQUFDLENBQUMsQ0FBQTtnQkFDWCxPQUFPLENBQUMsR0FBRyxDQUFDLE9BQU8sQ0FBQyxDQUFBO2FBQ3ZCLEdBQ0gsQ0FDRSxDQUFBO0NBQ1g7QUEzQkQsNEJBMkJDIn0=
+//# framerSourceMap=eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGxheUdyb3VuZC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL2NvZGUvUGxheUdyb3VuZC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQkFBOEI7QUFDOUIsaUNBQW1EO0FBQ25ELG1DQUEwRTtBQUUxRSx5QkFBeUI7QUFDekIsNENBQTRDO0FBRTVDLFNBQWdCLFFBQVEsQ0FBQyxLQUFLOztJQUMxQiw0Q0FBNEM7SUFDNUMsTUFBTSxDQUFDLEtBQUssRUFBRSxRQUFRLENBQUMsR0FBRyxnQkFBUSxDQUFDLENBQUMsQ0FBQyxDQUFBO0lBQ3JDLE1BQU0sRUFBRSxNQUFNLEVBQUUsS0FBSyxFQUFFLEdBQUcsS0FBSyxDQUFBO0lBQy9CLGlCQUFTLENBQUMsR0FBRyxFQUFFOztRQUNYLE9BQU8sQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLENBQUE7S0FDcEIsQ0FBQyxDQUFBO0lBRUYsT0FBTyxDQUNILG9CQUFDLGNBQUssSUFDRixNQUFNLEVBQUUsR0FBRyxFQUNYLEtBQUssRUFBRSxHQUFHLEVBQ1YsS0FBSyxFQUNELEtBQUssSUFBSSxDQUFDLENBQUMsQ0FBQztZQUNSLEdBQUcsRUFBRTs7Z0JBQ0QsSUFBSSxLQUFLLElBQUksQ0FBQyxFQUFFO29CQUNaLFFBQVEsQ0FBQyxLQUFLLEdBQUcsQ0FBQyxDQUFDLENBQUE7b0JBQ25CLE9BQU8sQ0FBQyxHQUFHLENBQUMsUUFBUSxDQUFDLENBQUE7aUJBQ3hCO2FBQ0osQ0FBQyxDQUFDO1lBQ0gsSUFBSTtRQUdaLG9CQUFDLGNBQUssSUFDRixNQUFNLEVBQUUsR0FBRyxFQUNYLEtBQUssRUFBRSxHQUFHLEVBQ1YsS0FBSyxFQUFFLENBQUMsQ0FBQyxFQUFFLEVBQUU7O2dCQUNULFFBQVEsQ0FBQyxDQUFDLENBQUMsQ0FBQTtnQkFDWCxDQUFDLENBQUMsZUFBZSxFQUFFLENBQUE7Z0JBQ25CLE9BQU8sQ0FBQyxHQUFHLENBQUMsT0FBTyxDQUFDLENBQUE7YUFDdkIsR0FDSCxDQUNFLENBQ1gsQ0FBQTtDQUNKO0FBbENELDRCQWtDQyJ9
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "react");
@@ -821,21 +821,26 @@ function PlayItem(props) {
     window["__checkBudget__"]();
     // useEffect(() => console.log("hello"), [])
     const [state, setState] = react_1.useState(0);
-    const [anotherState, setAnotherState] = react_1.useState(true);
     const { height, width } = props;
-    console.log("hi");
-    return React.createElement(framer_1.Frame, { height: 300, width: 500, onTap: () => {
-            window["__checkBudget__"]();
-            if (state == 0) {
-                setState(state + 1);
-                console.log("envoke");
-            }
-        } },
-        React.createElement(framer_1.Frame, { height: 100, width: 100, onTap: () => {
+    react_1.useEffect(() => {
+        window["__checkBudget__"]();
+        console.log("hi");
+    });
+    return (React.createElement(framer_1.Frame, { height: 300, width: 500, onTap: state == 0 ?
+            () => {
+                window["__checkBudget__"]();
+                if (state == 0) {
+                    setState(state + 1);
+                    console.log("envoke");
+                }
+            } :
+            null },
+        React.createElement(framer_1.Frame, { height: 100, width: 100, onTap: (e) => {
                 window["__checkBudget__"]();
                 setState(0);
+                e.stopPropagation();
                 console.log("close");
-            } }));
+            } })));
 }
 exports.PlayItem = PlayItem;
 exports.__info__ = [{ "name": "PlayItem", "children": false, "type": "component" }];
@@ -1225,7 +1230,7 @@ exports.__framer__ = package
 /*! exports provided: main, license, devDependencies, peerDependencies, framer, author, dependencies, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"main\":\"dist/index.js\",\"license\":\"MIT\",\"devDependencies\":{\"@types/react\":\"^16.8\"},\"peerDependencies\":{\"framer\":\"^1.0\",\"react\":\"^16.8\"},\"framer\":{\"id\":\"f39012cf-34c0-4cbe-a2f8-0221fe4e033f\"},\"author\":\"YY Z\",\"dependencies\":{\"@framer/basiclines.map\":\"^1.2.0\",\"@framer/benjamin.icon-generator\":\"^1.15.0\",\"@framer/derlukas.scroll-away\":\"^1.8.0\",\"@framer/djfumberger.mockmatic\":\"^1.14.0\",\"@framer/gusso.magic-move\":\"^3.3.0\",\"@framer/ismael.google-maps\":\"^2.1.0\",\"@framer/kasimir.iphone-x-kit\":\"^1.21.0\",\"@framer/mapbox.mapbox\":\"^1.3.0\",\"@framer/mikejohnson.material-icons\":\"^1.3.0\",\"@framer/steveruizok.mapbox-static-map\":\"^1.16.0\",\"delay\":\"^4.3.0\",\"emotion\":\"^10.0.14\",\"react-3d-viewer\":\"^1.0.12\",\"react-feather\":\"^2.0.3\",\"react-stack-grid\":\"^0.7.1\",\"react-stonecutter\":\"^0.3.10\",\"react-three-fiber\":\"^2.2.13\",\"three\":\"^0.106.2\",\"three-gltf-loader\":\"^1.106.0\"}}");
+module.exports = JSON.parse("{\"main\":\"dist/index.js\",\"license\":\"MIT\",\"devDependencies\":{\"@types/react\":\"^16.8\"},\"peerDependencies\":{\"framer\":\"^1.0\",\"react\":\"^16.8\"},\"framer\":{\"id\":\"f39012cf-34c0-4cbe-a2f8-0221fe4e033f\"},\"author\":\"YY Z\",\"dependencies\":{\"@framer/basiclines.map\":\"^1.2.0\",\"@framer/benjamin.icon-generator\":\"^1.15.0\",\"@framer/derlukas.scroll-away\":\"^1.8.0\",\"@framer/djfumberger.mockmatic\":\"^1.14.0\",\"@framer/gusso.magic-move\":\"^3.3.0\",\"@framer/ismael.google-maps\":\"^2.1.0\",\"@framer/kasimir.iphone-x-kit\":\"^1.21.0\",\"@framer/mapbox.mapbox\":\"^1.3.0\",\"@framer/mikejohnson.material-icons\":\"^1.3.0\",\"@framer/steveruizok.mapbox-static-map\":\"^1.16.0\",\"react-feather\":\"^2.0.3\"}}");
 
 /***/ }),
 
