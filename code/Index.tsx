@@ -55,7 +55,7 @@ export function App(props) {
             cycle_out()
             scrollControls.start({
                 y: -1 * (viewState.isEnvoked ? viewState.configs[viewState.invokedI].y : iniState.configs[viewState.invokedI].y),
-                transition: transition,
+                transition: primitives.transitions.default,
             })
         }
     }, [viewState.isEnvoked])
@@ -273,6 +273,7 @@ export function App(props) {
             background="null"
             position="relative"
             animate={current_out}
+            style={{fontFamily:"Open Sans"}}
         >
             <NavBar
                 leftIcons={[<ChevronLeft />, <Menu />]}

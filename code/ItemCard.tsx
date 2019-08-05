@@ -218,10 +218,6 @@ export function ItemCard(props) {
     )
 }
 
-export function TestCard() {
-    return <ItemCard item={itemConfigs[1]} />
-}
-
 const item = (name, heightOffset, price, itemNo, headline, detail) => {
     return {
         name: name,
