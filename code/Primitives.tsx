@@ -8,8 +8,16 @@ export const primitives = {
     transitions: {
         default: {
             type: "tween",
-            duration: 0.48,
+            duration: 0.68,
             ease: "easeOut"
+        },
+        default2: {
+            top: { times: [0, 0.7, 1] },
+            default: {
+                type: "tween",
+                duration: 0.64,
+                ease: "easeOut",
+            },
         },
         fast: {
             type: "tween",

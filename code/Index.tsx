@@ -48,23 +48,19 @@ export function App(props) {
     // const itemSumCount = React.useRef(0)
     const [current, cycle] = useCycle("initial", "envoked")
     const [current_out, cycle_out] = useCycle("initial_out", "envoked_out")
+    const scrollControls = useAnimation()
     React.useEffect(() => {
         if (viewState.invokedI >= 0) {
             console.log("use effect")
             cycle()
             cycle_out()
+            let offset = viewState.isEnvoked ? viewState.configs[viewState.invokedI].y : iniState.configs[viewState.invokedI].y
             scrollControls.start({
-                y: -1 * (viewState.isEnvoked ? viewState.configs[viewState.invokedI].y : iniState.configs[viewState.invokedI].y),
                 transition: primitives.transitions.default,
+                y: -offset,
             })
         }
     }, [viewState.isEnvoked])
-    // const changeItemSumCount = (change) => {
-    //     let currentSum = itemSumCount.current
-    //     currentSum += change
-    //     itemSumCount.current = currentSum
-    // }
-    const scrollControls = useAnimation()
     const { height, width } = props
     console.log("render")
     const subWidth = (width - gap * 3) / 2
@@ -96,10 +92,12 @@ export function App(props) {
         },
         container: {
             initial: {
+                top: [0, -40, 0],
                 width: width - gap * 2,
                 x: gap,
             },
             envoked: {
+                top: [0, 80, 0],
                 width: width,
                 x: IsEven(viewState.invokedI) ? 0 : -width - gap,
             },
@@ -167,13 +165,15 @@ export function App(props) {
                 initial: i => ({
                     height: 56,
                     width: 136,
-                    top: iniState.configs[i].h - 16 - 56,
+                    // top: iniState.configs[i].h - 16 - 56,
+                    // bottom: 16,
                     paddingLeft: 16,
                 }),
                 envoked: i => ({
-                    height: i == viewState.invokedI ? "auto" : 56,
+                    height: i == viewState.invokedI ? height - 140 - 16 : 56,
                     width: i == viewState.invokedI ? 240 : 136,
-                    top: i == viewState.invokedI ? 140 : "auto",
+                    // top: i == viewState.invokedI ? 140 : "auto",
+                    // bottom: i == viewState.invokedI ? 16 : 16,
                     paddingLeft: i == viewState.invokedI ? 40 : 16,
                 })
             },
@@ -217,30 +217,6 @@ export function App(props) {
                     transition: primitives.transitions.delay(i),
                 }),
             },
-            // detailContainer: {
-            //     initial: {
-            //         y: 56,
-            //         opacity: 0,
-            //         transition: transition,
-            //     },
-            //     envoked: {
-            //         y: 0,
-            //         opacity: 1,
-            //         transition: primitives.transitions.delyed,
-            //     },
-            // },
-            // button: {
-            //     initial: {
-            //         y: 56,
-            //         opacity: 0,
-            //         transition: transition,
-            //     },
-            //     envoked: {
-            //         y: 0,
-            //         opacity: 1,
-            //         transition: primitives.transitions.delyedMore,
-            //     },
-            // }
         },
     }
 
@@ -273,7 +249,7 @@ export function App(props) {
             background="null"
             position="relative"
             animate={current_out}
-            style={{fontFamily:"Open Sans"}}
+            style={{ fontFamily: "Open Sans" }}
         >
             <NavBar
                 leftIcons={[<ChevronLeft />, <Menu />]}
@@ -286,7 +262,7 @@ export function App(props) {
                 bottom={0}
                 width="100%"
                 initial="initial_out"
-                transition={transition}
+                transition={primitives.transitions.default}
                 variants={variants.scroll}
                 scrollAnimate={scrollControls}
                 dragEnabled={!viewState.isEnvoked}
@@ -296,7 +272,7 @@ export function App(props) {
                     name="container"
                     background="null"
                     initial="initial"
-                    transition={transition}
+                    transition={primitives.transitions.default2}
                     variants={variants.container}
                     animate={current}
                 >
