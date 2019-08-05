@@ -8,14 +8,17 @@ export const primitives = {
     transitions: {
         default: {
             type: "tween",
-            duration: 0.68,
+            duration: 0.48,
             ease: "easeOut"
         },
         default2: {
-            top: { times: [0, 0.7, 1] },
+            top: {
+                times: [0, 0.7, 1],
+                ease: ["easeOut","easeIn"]
+            },
             default: {
                 type: "tween",
-                duration: 0.64,
+                duration: 0.48,
                 ease: "easeOut",
             },
         },
@@ -38,7 +41,7 @@ export const primitives = {
             type: "tween",
             duration: 0.32,
             ease: "easeOut",
-            delay: 0.48 + i * 0.16,
+            delay: 0.56 + i * 0.16,
         }),
         delyedBit: {
             type: "tween",
