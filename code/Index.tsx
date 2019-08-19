@@ -52,12 +52,14 @@ export function App(props) {
     React.useEffect(() => {
         if (viewState.invokedI >= 0) {
             console.log("use effect")
-            cycle()
-            cycle_out()
-            let offset = viewState.isEnvoked ? viewState.configs[viewState.invokedI].y : iniState.configs[viewState.invokedI].y
-            scrollControls.start({
-                transition: primitives.transitions.default,
-                y: -offset,
+            requestAnimationFrame(() => {
+                cycle()
+                cycle_out()
+                let offset = viewState.isEnvoked ? viewState.configs[viewState.invokedI].y : iniState.configs[viewState.invokedI].y
+                scrollControls.start({
+                    transition: primitives.transitions.default,
+                    y: -offset,
+                })
             })
         }
     }, [viewState.isEnvoked])
@@ -94,11 +96,13 @@ export function App(props) {
             initial: {
                 top: [0, -40, 0],
                 width: width - gap * 2,
+                height: iniState.configs[iniState.configs.length - 1].y+320,
                 x: gap,
             },
             envoked: {
                 top: [0, 80, 0],
                 width: width,
+                height: 999999,
                 x: IsEven(viewState.invokedI) ? 0 : -width - gap,
             },
         },
