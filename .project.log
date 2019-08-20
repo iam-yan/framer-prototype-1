@@ -10883,3 +10883,13 @@
 [2019-08-19 22:00:44.4900] - INFO - writing standalone output /Users/juuen/Desktop/Projects/Study/FramerX/Apple iPhone XS Max
 [2019-08-19 22:00:46.4990] - INFO - standalone export done: /Users/juuen/Desktop/Projects/Study/FramerX/Apple iPhone XS Max 389
 [2019-08-19 22:00:48.1030] - INFO - Backing up to /Users/juuen/Desktop/Projects/Study/FramerX/prototype.framerfx/.backups/2019-08-19 22.00.48.zip
+[2019-08-20 11:52:05.5300] - ERROR - /Applications/Framer X.app/Contents/Resources/Server/node_modules/yarn/lib/cli.js:78070
+[2019-08-20 11:52:05.5470] - ERROR -     compromised = compromised || function (err) { throw err; };
+[2019-08-20 11:52:05.5470] - ERROR -                                                   ^
+[2019-08-20 11:52:05.5470] - ERROR - Error: ENOENT: no such file or directory, utime '/Users/juuen/Library/Caches/Framer/yarn/mutex.lock'
+[2019-08-20 11:52:05.9240] - ERROR - /Applications/Framer X.app/Contents/Resources/Server/node_modules/yarn/lib/cli.js:78070
+[2019-08-20 11:52:05.9240] - ERROR -     compromised = compromised || function (err) { throw err; };
+[2019-08-20 11:52:05.9240] - ERROR -                                                   ^
+[2019-08-20 11:52:05.9240] - ERROR - Error: ENOENT: no such file or directory, utime '/Users/juuen/Library/Caches/Framer/yarn/mutex.lock'
+[2019-08-20 12:41:10.1850] - INFO - writing standalone output /Users/juuen/Desktop/Projects/Study/FramerX/Apple iPhone XS
+[2019-08-20 12:41:12.8340] - INFO - standalone export done: /Users/juuen/Desktop/Projects/Study/FramerX/Apple iPhone XS 584
