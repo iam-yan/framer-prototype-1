@@ -297,7 +297,7 @@ const configs = [
     ),
 
     item(
-        "L'INTERDIT ÉDITION WHITE",
+        "L'INTERDIT PRIMER WHITE",
         -32,
         230,
         "P069003",

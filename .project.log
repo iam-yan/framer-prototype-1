@@ -10895,3 +10895,27 @@
 [2019-08-20 12:41:12.8340] - INFO - standalone export done: /Users/juuen/Desktop/Projects/Study/FramerX/Apple iPhone XS 584
 [2019-08-20 13:00:39.0470] - INFO - writing standalone output /Users/juuen/Desktop/Projects/Study/FramerX/Apple iPhone XS Max
 [2019-08-20 13:00:39.8190] - INFO - standalone export done: /Users/juuen/Desktop/Projects/Study/FramerX/Apple iPhone XS Max 194
+[2019-08-20 18:09:29.1800] - ERROR - File that does not exist: /Users/juuen/Desktop/Projects/Study/FramerX/prototype.framerfx/code/images/L'INTERDIT ÉDITION WHITE.png
+[2019-08-20 18:09:54.4030] - INFO - _handleWatch: build took 355ms
+[2019-08-20 18:09:54.5510] - INFO - _handleWatch: updated scripts - index.js
+[2019-08-20 18:10:00.8020] - INFO - GET 200 /code/images/L'INTERDIT%20%C3%89DITION%20COUTURE.png 449 kB (66ms)
+[2019-08-20 18:10:00.8040] - INFO - GET 200 /code/images/MISTER%20PRISME%20PRIMER.png 445 kB (64ms)
+[2019-08-20 18:10:00.8040] - INFO - GET 200 /code/images/VOLUME%20DISTURBIA.png 414 kB (39ms)
+[2019-08-20 18:10:00.8040] - INFO - GET 200 /code/images/MATISSIME%20VELVET%20FLUID.png 420 kB (69ms)
+[2019-08-20 18:10:00.8380] - INFO - GET 200 /code/images/MISTER%20MATIFYING%20STICK.png 400 kB (73ms)
+[2019-08-20 18:10:01.3080] - INFO - GET 200 /code/images/MISTER%20ANGE%20OU%20D%C3%89MON.png 412 kB (64ms)
+[2019-08-20 18:10:01.3080] - INFO - GET 200 /code/images/TEINT%20COUTURE%20PRIMER.png 141 kB (89ms)
+[2019-08-20 18:10:01.5440] - INFO - GET 200 /code/images/L'INTERDIT%20PRIMER%20WHITE.png 342 kB (88ms)
+[2019-08-20 18:10:01.5470] - INFO - GET 200 /code/images/TEINT%20COUTURE%20RADIANT%20DROP.png 431 kB (138ms)
+[2019-08-20 18:10:01.5760] - INFO - GET 200 /code/images/MISTER%20PRISME%20PRIMER.png 445 kB (27ms)
+[2019-08-20 18:10:01.5770] - INFO - GET 200 /code/images/VOLUME%20DISTURBIA.png 414 kB (11ms)
+[2019-08-20 18:10:01.5810] - INFO - GET 200 /code/images/MISTER%20MATIFYING%20STICK.png 400 kB (16ms)
+[2019-08-20 18:10:01.5830] - INFO - GET 200 /code/images/L'INTERDIT%20%C3%89DITION%20COUTURE.png 449 kB (15ms)
+[2019-08-20 18:10:01.5840] - INFO - GET 200 /code/images/MISTER%20ANGE%20OU%20D%C3%89MON.png 412 kB (14ms)
+[2019-08-20 18:10:01.5850] - INFO - GET 200 /code/images/MATISSIME%20VELVET%20FLUID.png 420 kB (14ms)
+[2019-08-20 18:10:01.5920] - INFO - GET 200 /code/images/TEINT%20COUTURE%20PRIMER.png 141 kB (4ms)
+[2019-08-20 18:10:01.5960] - INFO - GET 200 /code/images/TEINT%20COUTURE%20RADIANT%20DROP.png 431 kB (4ms)
+[2019-08-20 18:10:01.5980] - INFO - GET 200 /code/images/L'INTERDIT%20PRIMER%20WHITE.png 342 kB (2ms)
+[2019-08-20 18:10:26.7750] - INFO - writing standalone output /Users/juuen/Desktop/Projects/Study/FramerX/Apple iPhone XS Max
+[2019-08-20 18:10:28.0710] - INFO - standalone export done: /Users/juuen/Desktop/Projects/Study/FramerX/Apple iPhone XS Max 194
+[2019-08-20 18:10:31.1820] - INFO - Backing up to /Users/juuen/Desktop/Projects/Study/FramerX/prototype.framerfx/.backups/2019-08-20 18.10.31.zip

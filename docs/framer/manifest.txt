@@ -173,7 +173,7 @@ code/images/MISTER PRISME PRIMER.png
 code/images/MISTER MATIFYING STICK.png
 code/images/MISTER ANGE OU DÉMON.png
 code/images/MATISSIME VELVET FLUID.png
-code/images/L'INTERDIT ÉDITION WHITE.png
+code/images/L'INTERDIT PRIMER WHITE.png
 code/images/L'INTERDIT ÉDITION COUTURE.png
 code/images/GENTLEMAN GIVENCHY.png
 code/images/GENTLEMAN GIVENCHY .png
